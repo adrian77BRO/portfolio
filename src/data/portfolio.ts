@@ -5,7 +5,7 @@ export const profile: Profile = {
   name: 'Adrián Mauricio Hernández Pérez',
   shortName: 'AM',
   role: 'Desarrollador de software full-stack',
-  photoUrl: '', // Agrega tu foto en public/foto-perfil.jpg y cambia el valor a '/foto-perfil.jpg'
+  photoUrl: '/perfil.png', // Agrega tu foto en public/foto-perfil.jpg y cambia el valor a '/foto-perfil.jpg'
   email: 'adriagon613@gmail.com', // Ejemplo: 'hola@tudominio.com'
   github: 'https://github.com/adrian77BRO', // Ejemplo: 'https://github.com/tuusuario'
   linkedin: 'https://www.linkedin.com/in/adri%C3%A1n-mauricio-hern%C3%A1ndez-p%C3%A9rez-ab929331b/', // Ejemplo: 'https://www.linkedin.com/in/tuusuario/'
@@ -28,8 +28,8 @@ export const projects: Project[] = [
     technologies: ['React Native', 'TypeScript', 'Node.js', 'REST API'],
     visual: 'medical',
     featured: true,
-    repositoryUrl: '',
-    demoUrl: '',
+    repositoryUrl: 'https://github.com/adrian77BRO/salud-confiable',
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.saludconfiable.app',
   },
   {
     id: 'narramap',

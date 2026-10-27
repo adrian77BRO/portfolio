@@ -1,15 +1,20 @@
-import { ArrowDown, ArrowRight, ArrowUpRight, Braces, Check, ChevronRight, Code2, Database, GitBranch, Layers3, Server } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowDown, ArrowRight, ArrowUpRight, Braces, Camera, Check, ChevronRight, Code2, Database, GitBranch, Layers3, Server } from 'lucide-react'
 import { profile } from '../data/portfolio'
 
 export function Hero() {
+  const [photoFailed, setPhotoFailed] = useState(false)
+
   return (
     <section className="hero" id="inicio">
       <div className="hero-glow" aria-hidden="true" />
       <div className="container hero-grid">
         <div className="hero-content">
           <div className="availability"><span className="availability-pulse" /> Disponible para oportunidades junior</div>
-          <div className="hero-kicker"><span className="mono-purple">&lt;</span> HOLA, SOY DESARROLLADOR FULL-STACK <span className="mono-purple">/&gt;</span></div>
-          <h1>Construyo ideas<br />en <span className="text-gradient">soluciones</span><br />digitales<span className="gradient-period">.</span></h1>
+          <div className="hero-kicker"><span className="mono-purple">&lt;</span> HI, I'M A FULL-STACK DEVELOPER <span className="mono-purple">/&gt;</span></div>
+          <h1 className="hero-name">Adrián Pérez</h1>
+          <p className="hero-role"><span className="hero-role-bar" aria-hidden="true" />{profile.role}</p>
+          <p className="hero-statement">Construyo ideas en <span className="text-gradient">soluciones digitales</span><span className="gradient-period">.</span></p>
           <p className="hero-description">Me especializo en conectar interfaces, APIs y bases de datos para crear productos web y móviles funcionales. Me entusiasma convertir problemas reales en software útil.</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#proyectos">Explorar proyectos <ArrowUpRight size={18} /></a>
@@ -36,12 +41,21 @@ export function Hero() {
               <div className="code-spacer"><span className="ln">06</span></div>
               <div><span className="ln">07</span><span className="code-purple">const</span> me = {'{'}</div>
               <div><span className="ln">08</span>&nbsp;&nbsp;name: <span className="code-green">'{profile.name}'</span>,</div>
-              <div><span className="ln">09</span>&nbsp;&nbsp;stack: [<span className="code-green">'React'</span>, <span className="code-green">'Node'</span>],</div>
+              <div><span className="ln">09</span>&nbsp;&nbsp;stack: [<span className="code-green">'React'</span>, <span className="code-green">'Node'</span>,  <span className="code-green">'SQL'</span>],</div>
               <div><span className="ln">10</span>&nbsp;&nbsp;focus: <span className="code-green">'impact'</span>,</div>
               <div><span className="ln">11</span>{'}'}</div>
               <div><span className="ln">12</span><span className="code-muted">// always learning_</span><span className="cursor-block" /></div>
             </div>
             <div className="code-bottom"><span><span className="status-dot" /> build successful</span><span>UTF-8 &nbsp; TSX</span></div>
+          </div>
+          <div className="hero-photo-card" aria-label={profile.photoUrl ? `Fotografía de ${profile.name}` : 'Espacio para tu fotografía personal'}>
+            {/*<div className="hero-photo-head"><span className="hero-photo-dot" /> ME <span className="hero-photo-head-line" /></div>*/}
+            {profile.photoUrl && !photoFailed ? (
+              <img className="hero-photo-image" src={profile.photoUrl} alt={`Retrato de ${profile.name}`} onError={() => setPhotoFailed(true)} />
+            ) : (
+              <div className="hero-photo-empty"><div className="hero-photo-icon"><Camera size={32} strokeWidth={1.55} /></div><strong>Tu fotografía aquí</strong><span>Retrato profesional</span></div>
+            )}
+            {/*<div className="hero-photo-caption"><span>FULL-STACK DEV</span><strong>{profile.name}</strong></div>*/}
           </div>
           <div className="stack-card">
             <span className="stack-card-icon"><Layers3 size={20} /></span>

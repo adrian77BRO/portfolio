@@ -13,7 +13,7 @@ function Footer() {
     <div className="container footer-inner">
       <a className="footer-logo" href="#inicio">
         <Code2 size={20} />
-        <span>portfolio<span className="brand-dot">.</span>dev</span></a><span>Hecho con React + TypeScript · © {new Date().getFullYear()} {profile.name}</span>
+        <span>portfolio<span className="brand-dot">.</span>dev</span></a><span>Developed and designed by {profile.name} · © {new Date().getFullYear()}</span>
       <div className="footer-socials">
         {profile.github &&
           <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub">
