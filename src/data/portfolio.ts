@@ -2,7 +2,7 @@ import type { Profile, Project } from '../types'
 
 // EDITA AQUÍ TUS DATOS. No se inventaron correos, perfiles ni enlaces.
 export const profile: Profile = {
-  name: 'Adrián Mauricio Hernández Pérez',
+  name: 'Adrián Pérez',
   shortName: 'AM',
   role: 'Desarrollador de software full-stack',
   photoUrl: '/perfil.png', // Agrega tu foto en public/foto-perfil.jpg y cambia el valor a '/foto-perfil.jpg'
