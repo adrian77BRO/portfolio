@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import { ArrowUp, Briefcase, Code2, GitBranch } from 'lucide-react'
+import { ArrowUp, Code2, CodeXml, Briefcase } from 'lucide-react'
 import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router'
 import { About } from './components/About'
 import { Contact } from './components/Contact'
 import { Experience } from './components/Experience'
 import { Hero } from './components/Hero'
+import { Presentation } from './components/Presentation'
 import { Navbar } from './components/Navbar'
 import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
@@ -35,7 +36,7 @@ function Home() {
     document.title = `Portafolio Full-stack | ${profile.name}`
   }, [])
 
-  return <><Hero /><About /><Projects /><Skills /><Experience /><Contact /></>
+  return <><Hero /><Presentation /><About /><Projects /><Skills /><Experience /><Contact /></>
 }
 
 function Footer() {
@@ -45,7 +46,7 @@ function Footer() {
         <Link className="footer-logo" to="/#inicio"><Code2 size={20} /><span>portfolio<span className="brand-dot">.</span>dev</span></Link>
         <span>Hecho con React + TypeScript · © {new Date().getFullYear()} {profile.name}</span>
         <div className="footer-socials">
-          {profile.github && <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><GitBranch size={19} /></a>}
+          {profile.github && <a href={profile.github} target="_blank" rel="noreferrer" aria-label="GitHub"><CodeXml size={19} /></a>}
           {profile.linkedin && <a href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Briefcase size={19} /></a>}
           <Link to="/#inicio" aria-label="Volver arriba"><ArrowUp size={19} /></Link>
         </div>

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Copy, Download, GitBranch, BriefcaseBusiness, Mail, MapPin, Send } from 'lucide-react'
+import { ArrowUpRight, Copy, Download, CodeXml, Briefcase, Mail, MapPin, Send } from 'lucide-react'
 import { useState } from 'react'
 import { profile } from '../data/portfolio'
 import { SectionHeading } from './SectionHeading'
@@ -28,8 +28,8 @@ export function Contact() {
           <div className="contact-methods">
             <div className="contact-method"><span><Mail size={17}/></span><div><small>EMAIL</small><strong>{profile.email || 'Pendiente de configurar'}</strong></div></div>
             <div className="contact-method"><span><MapPin size={17}/></span><div><small>UBICACIÓN</small><strong>{profile.location}</strong></div></div>
-            {profile.github && <a className="contact-method social-method" href={profile.github} target="_blank" rel="noreferrer"><span><GitBranch size={17}/></span><div><small>GITHUB</small><strong>Ver repositorios</strong></div><ArrowUpRight size={15}/></a>}
-            {profile.linkedin && <a className="contact-method social-method" href={profile.linkedin} target="_blank" rel="noreferrer"><span><BriefcaseBusiness size={17}/></span><div><small>LINKEDIN</small><strong>Ver perfil profesional</strong></div><ArrowUpRight size={15}/></a>}
+            {profile.github && <a className="contact-method social-method" href={profile.github} target="_blank" rel="noreferrer"><span><CodeXml size={17}/></span><div><small>GITHUB</small><strong>Ver repositorios</strong></div><ArrowUpRight size={15}/></a>}
+            {profile.linkedin && <a className="contact-method social-method" href={profile.linkedin} target="_blank" rel="noreferrer"><span><Briefcase size={17}/></span><div><small>LINKEDIN</small><strong>Ver perfil profesional</strong></div><ArrowUpRight size={15}/></a>}
             {profile.cvUrl && <a className="contact-method social-method" href={profile.cvUrl} target="_blank" rel="noreferrer"><span><Download size={17}/></span><div><small>CURRÍCULUM</small><strong>Descargar CV</strong></div><ArrowUpRight size={15}/></a>}
           </div>
         </div>

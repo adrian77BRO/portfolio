@@ -4,7 +4,7 @@ import type { Profile, Project } from '../types'
 export const profile: Profile = {
   name: 'Adrián Pérez',
   shortName: 'AM',
-  role: 'Desarrollador de software full-stack',
+  role: 'Desarrollador full-stack',
   photoUrl: '/perfil.png', // Agrega tu foto en public/foto-perfil.jpg y cambia el valor a '/foto-perfil.jpg'
   email: 'adriagon613@gmail.com', // Ejemplo: 'hola@tudominio.com'
   github: 'https://github.com/adrian77BRO', // Ejemplo: 'https://github.com/tuusuario'
