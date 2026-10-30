@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { ArrowUpRight, Code2, Menu, X } from 'lucide-react'
+import { Link } from 'react-router'
 
 const links = [
-  { label: 'Sobre mí', href: '#sobre-mi' },
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Tecnologías', href: '#tecnologias' },
-  { label: 'Experiencia', href: '#experiencia' },
+  { label: 'Sobre mí', href: '/#sobre-mi' },
+  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Tecnologías', href: '/#tecnologias' },
+  { label: 'Experiencia', href: '/#experiencia' },
 ]
 
 export function Navbar() {
@@ -27,19 +28,19 @@ export function Navbar() {
   return (
     <header className="site-header">
       <nav className="navigation container" aria-label="Navegación principal">
-        <a className="brand" href="#inicio" onClick={() => setIsOpen(false)} aria-label="Ir al inicio">
+        <Link className="brand" to="/#inicio" onClick={() => setIsOpen(false)} aria-label="Ir al inicio">
           <span className="brand-mark"><Code2 size={19} strokeWidth={2.5} /></span>
           <span>portfolio<span className="brand-dot">.</span>dev</span>
-        </a>
+        </Link>
 
         <div className={`nav-links ${isOpen ? 'nav-links-open' : ''}`} id="mobile-navigation">
           {links.map(link => (
-            <a href={link.href} key={link.href} onClick={() => setIsOpen(false)}>{link.label}</a>
+            <Link to={link.href} key={link.href} onClick={() => setIsOpen(false)}>{link.label}</Link>
           ))}
-          <a className="nav-mobile-contact" href="#contacto" onClick={() => setIsOpen(false)}>Contacto</a>
+          <Link className="nav-mobile-contact" to="/#contacto" onClick={() => setIsOpen(false)}>Contacto</Link>
         </div>
 
-        <a className="nav-contact btn btn-outline btn-sm" href="#contacto">Hablemos <ArrowUpRight size={16} /></a>
+        <Link className="nav-contact btn btn-outline btn-sm" to="/#contacto">Hablemos <ArrowUpRight size={16} /></Link>
         <button
           type="button"
           className="mobile-toggle"
